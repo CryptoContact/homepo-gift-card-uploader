@@ -1,0 +1,10 @@
+{
+    "production": {
+        "app_function": "app.app",
+        "aws_region": "eu-north-1",
+        "profile_name": "default",
+        "project_name": "homepo-gift-car",
+        "runtime": "python3.7",
+        "s3_bucket": "zappa-zny9nrhnl"
+    }
+}
