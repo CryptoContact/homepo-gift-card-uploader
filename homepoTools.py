@@ -8,9 +8,12 @@ def is_valid_homedepot_gift_card(card):
 	actual_card_number_length = len(str(card.card_number))
 	actual_pin_code_length    = len(str(card.pin_code))
 
+	while len(str(card.pin_code)) < 4:
+		card.pin_code = "0" + str(card.pin_code)
+
 	print(f"expected {expected_card_number_length}, got {actual_card_number_length}")
 	print(f"expected  {expected_pin_code_length}, got {actual_pin_code_length}")
-	
+
 	if expected_card_number_length == actual_card_number_length:
 		if expected_pin_code_length == actual_pin_code_length:
 			print("Card is valid")
