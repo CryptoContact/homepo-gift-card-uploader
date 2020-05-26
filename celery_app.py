@@ -8,7 +8,7 @@ from homepoTools import (
 from celery import Celery
 
 
-celery_app = Celery('gift_card_uploader', broker='pyamqp://kristian:kristian@localhost/giftCardUploaderQueue')
+celery_app = Celery('gift_card_uploader', broker='pyamqp://guest@rabbitmq//')
 
 
 @celery_app.task

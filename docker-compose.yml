@@ -1,0 +1,19 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "5100:5100"
+  rabbitmq:
+    image: "rabbitmq"
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfile-celery
+  flower:  
+    image: mher/flower
+    environment:
+      - CELERY_BROKER_URL=pyamqp://guest@rabbitmq//
+      - FLOWER_PORT=8889
+    ports:  
+      - 8889:8889

@@ -1,0 +1,13 @@
+from python:3
+
+copy . /
+
+RUN apt update -y && apt upgrade -y
+
+RUN apt install git
+
+RUN pip install -r requirements.txt
+RUN pip install celery
+
+
+CMD ["celery", "-A", "celery_app", "worker", "-c", "8"]
